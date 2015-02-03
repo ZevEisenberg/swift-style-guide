@@ -108,15 +108,13 @@ func unwindSegue(segue : UIStoryboardSegue) {}
 ## Conditionals
 
 * Return and break early.
-* `else` clause should start on a new line.
 * There should be a single space character before and after the condition.
 * Braces should open on the same line as the statement and close on a new line.
 
 ```swift
 if something == 10 {
-   // do something
-}
-else {
+	// do something
+} else {
 	// do something else
 }
 ```
