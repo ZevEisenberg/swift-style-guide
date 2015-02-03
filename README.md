@@ -10,6 +10,7 @@ This guide is designed to help maintain consistency in iOS projects. Some prefer
 * [Optionals](#optionals)
 * [Properties](#properties)
 * [Methods](#methods)
+* [Callbacks](#callbacks)
 * [Conditionals](#conditionals)
 * [Ternary Operator](#ternary-operator)
 * [Collections](#collections)
@@ -103,6 +104,20 @@ func doSomethingWithThin(thing: SomeType, otherThing: SomeType) {
 }
 
 func unwindSegue(segue : UIStoryboardSegue) {}
+```
+
+## Callbacks
+
+* Use `Void` to denote empty return type.
+* Optional completion callbacks should have default parameter `nil`.
+
+```swift
+func domeSomeTaskWithCallback(callback: (() -> Void)? = nil) {
+	…
+	if let callback = callback {
+		callback()
+	}
+}
 ```
 
 ## Conditionals
@@ -218,8 +233,40 @@ func doSomethingWith(object: SomeType) -> Bool {}
 
 ### Empty lines
 
-* `MARK` sections should be separated from each other by 2 empty lines.
+* `// MARK: -` sections should have 2 empty lines preceding their declaration.
 * Use empty lines sparingly to separate code where it improves readability.
+* When declaring `Classes`, `Structs`, `Enums` and `Protocols` in global scope, separate them from other code by 2 empty lines.
+
+```swift
+protocol SomeProtocol {
+	func someMethod()
+}
+
+
+class SomeClass: SomeProtocol {
+
+	func someMethod() {}
+	
+	
+	// MARK: Lifecycle
+
+	init() {
+		…
+	}
+	
+	convenience init(stuff: StuffType) {
+		…
+	}
+	
+	
+	// MARK: Networking
+	
+	func download() { 
+		…
+	}
+}
+
+```
 
 ### Extensions
 
