@@ -248,7 +248,7 @@ class SomeClass: SomeProtocol {
 	func someMethod() {}
 	
 	
-	// MARK: Lifecycle
+	// MARK: - Lifecycle
 
 	init() {
 		…
@@ -259,7 +259,7 @@ class SomeClass: SomeProtocol {
 	}
 	
 	
-	// MARK: Networking
+	// MARK: - Networking
 	
 	func download() { 
 		…
