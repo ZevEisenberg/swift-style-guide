@@ -27,7 +27,7 @@ This guide is designed to help maintain consistency in iOS projects. Some prefer
 * When accessing properties or methods on self, leave the reference to self implicit by default.
 * Only include the explicit keyword when required by the language — for example, in a closure, or when parameter names conflict:
 
-```
+```swift
 extension History {
     init(events: [Event]) {
         self.events = events
@@ -66,7 +66,7 @@ for var i = 0; i < 10; i++ {
 * Use `if let …` or optional chaining insead of force-unwrapping(`!`).
 * Avoid using implicitly unwrapped optionals.
 
-```
+```swift
 if let foo = foo {
     // Use unwrapped `foo` value in here
 } else {
@@ -81,7 +81,7 @@ foo?.callSomethingIfFooIsNotNil()
 
 * When possible, omit the `get` keyword on read-only computed properties and read-only subscripts.
 
-```
+```swift
 var myGreatProperty: Int {
     return 4
 }
@@ -227,7 +227,7 @@ func doSomethingWith(object: SomeType) -> Bool {}
 
 * Use extensions when adopting protocols:
 
-```
+```swift
 extension SomeClass: SomeProtocol {
 	// conform to protocol
 }
