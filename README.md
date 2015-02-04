@@ -64,8 +64,9 @@ for var i = 0; i < 10; i++ {
 
 ## Optionals
 
+* Use shorthand notation when declaring optionals `?` and implicitly unwrapped optionals `!`. 
 * Use `if let …` or optional chaining insead of force-unwrapping(`!`).
-* Avoid using implicitly unwrapped optionals.
+* Avoid using implicitly unwrapped optionals whenever possible.
 
 ```swift
 if let foo = foo {
@@ -92,6 +93,20 @@ subscript(index: Int) -> T {
 }
 ```
 
+* Use closures when initializing properties that require non-trivial setup.
+* Use `lazy` keyword where appropriate to defer computations until the value of the property is called for.
+
+```swift
+class SomeClass {
+
+	lazy var classProperty: OtherClass = {
+		let other = OtherClass()
+		other.setting = value
+		return other
+	}()
+}
+```
+
 ## Methods
 
 * Use descriptive method and parameter names.
@@ -108,7 +123,7 @@ func unwindSegue(segue : UIStoryboardSegue) {}
 
 ## Callbacks
 
-* Use `Void` to denote empty return type.
+* Use `Void` to denote return type for callbacks that return nothing.
 * Optional completion callbacks should have default parameter `nil`.
 
 ```swift
@@ -125,8 +140,16 @@ func domeSomeTaskWithCallback(callback: (() -> Void)? = nil) {
 * Return and break early.
 * There should be a single space character before and after the condition.
 * Braces should open on the same line as the statement and close on a new line.
+* `else` clause should begin on the same line with `if`'s closing brace.
 
 ```swift
+func someFunction(valid: Bool) {
+	if !valid {
+		return
+	}
+	// do something
+}
+
 if something == 10 {
 	// do something
 } else {
