@@ -15,9 +15,9 @@ This guide is designed to help maintain consistency in iOS projects. Some prefer
 * [Ternary Operator](#ternary-operator)
 * [Collections](#collections)
 * [Error handling](#error-handling)
-* [Comments](#comments)
 * [Organization](#organization)
-	* [MARK](#mark)
+	* [Comments](#comments)
+	* [Mark](#mark)
 	* [Empty lines](#empty-lines)
 	* [Extensions](#extensions)
 
@@ -52,13 +52,14 @@ Accordingly, whenever you see a var identifier being used, assume that it will c
 
 ## Operands
 
-Separate binary operands with a single space, but unary operands with none:
+Separate binary operands with a single space, but unary operands with none.  
+With exception for range operators `...`, `..<`.
 
 ```swift
-int coefficient = x + y * 10;
+var number = x + y * 10;
 
-for var i = 0; i < 10; i++ {
-    // do semething
+for _ in 0..<3 {
+	number++
 }
 ```
 
@@ -226,30 +227,17 @@ if !trySomethingWithError(&error) {
 }
 ```
 
-## Comments
-
-Code should be as self-documenting as possible, with only the need for intermittent, few-line explanations.
-
-Comments should be kept up-to-date, or deleted.  
-When they are needed, comments should be used to explain **why** a particular piece of code does something. 
-
-When necessary, public API should have documentation comments:
-
-```swift
-/// Concise documentation comment
-func doSomethingWith(object: SomeType) -> Bool {}
-
-/**
-	This is a method description
-	:param: objectName parameter description
-	:returns: return value description
- */
-func doSomethingWith(object: SomeType) -> Bool {}
-```
-
 ## Organization
 
-### MARK:
+### Comments
+
+When they are needed, comments should be used to explain **why** a particular piece of code does something.
+
+* Code should be as self-documenting as possible, with only the need for intermittent, few-line explanations. 
+* When necessary, public API should have documentation comments.
+* Comments should be kept up-to-date, or deleted. 
+
+### Mark
 
  * `// MARK: -` to categorize code into functional groupings.
  * `// MARK:` for subgroups.
@@ -265,6 +253,7 @@ func doSomethingWith(object: SomeType) -> Bool {}
 
 * Use extensions when adopting protocols.
 
+### Example:
 
 ```swift
 protocol SomeProtocol {
@@ -274,7 +263,17 @@ protocol SomeProtocol {
 
 class SomeClass {
 
-	func doWork() {
+	/// Concise documentation comment
+	func doStuff() {
+		…
+	}
+	
+	/**
+		This is a method description
+		:param: thing parameter description
+		:returns: return value description
+	 */
+	func doComplexStuff(thing: Science) -> [Magnets] {
 		…
 	}
 
