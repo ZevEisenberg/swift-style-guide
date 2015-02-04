@@ -71,12 +71,13 @@ for _ in 0..<3 {
 
 ```swift
 if let foo = foo {
-    // Use unwrapped `foo` value in here
+    // do something with unwrapped `foo`
 } else {
-    // If appropriate, handle the case where the optional is nil
+    // if appropriate, handle the case where `foo` is nil
 }
 
-// Call the function if `foo` is not nil. If `foo` is nil, ignore we ever tried to make the call
+// Call the function if `foo` is not nil. 
+// If `foo` is nil, ignore we ever tried to make the call.
 foo?.callSomethingIfFooIsNotNil()
 ```
 
@@ -265,7 +266,6 @@ class SomeClass {
 
 	/// Concise documentation comment
 	func doStuff() {
-		…
 	}
 	
 	/**
@@ -274,25 +274,21 @@ class SomeClass {
 		:returns: return value description
 	 */
 	func doComplexStuff(thing: Science) -> [Magnets] {
-		…
 	}
 
 
 	// MARK: - Lifecycle
 
 	init() {
-		…
 	}
 	
 	convenience init(stuff: StuffType) {
-		…
 	}
 	
 	
 	// MARK: - Networking
 	
-	func download() { 
-		…
+	func download() {
 	}
 }
 
