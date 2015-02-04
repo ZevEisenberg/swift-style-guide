@@ -233,9 +233,15 @@ func doSomethingWith(object: SomeType) -> Bool {}
 
 ### Empty lines
 
-* `// MARK: -` sections should have 2 empty lines preceding their declaration.
-* Use empty lines sparingly to separate code where it improves readability.
-* When declaring `Classes`, `Structs`, `Enums` and `Protocols` in global scope, separate them from other code by 2 empty lines.
+* Use single empty lines sparingly to separate code where it improves readability.
+* `// MARK: -` sections should have 2 empty lines above their declaration.
+* When declaring `classes`, `structs`, `enums`, `protocols` and `extensions` in global scope, separate them from other code by 2 empty lines.
+
+
+### Extensions
+
+* Use extensions when adopting protocols.
+
 
 ```swift
 protocol SomeProtocol {
@@ -243,11 +249,13 @@ protocol SomeProtocol {
 }
 
 
-class SomeClass: SomeProtocol {
+class SomeClass {
 
-	func someMethod() {}
-	
-	
+	func doWork() {
+		…
+	}
+
+
 	// MARK: - Lifecycle
 
 	init() {
@@ -266,13 +274,7 @@ class SomeClass: SomeProtocol {
 	}
 }
 
-```
 
-### Extensions
-
-* Use extensions when adopting protocols:
-
-```swift
 extension SomeClass: SomeProtocol {
 	// conform to protocol
 }
