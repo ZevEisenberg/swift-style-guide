@@ -21,7 +21,8 @@ This guide is designed to help maintain consistency in iOS projects. Some prefer
 	* [Empty lines](#empty-lines)
 	* [Extensions](#extensions)
 
-### Indent using 4 spaces. Never indent with tabs. Be sure to set this preference in Xcode.
+### Indent using 4 spaces. Never indent with tabs. Lines should be no longer than 130 symbols.
+#### Be sure to set these preference in Xcode.
 
 ## self
 
@@ -120,7 +121,7 @@ func doSomethingWithThin(thing: SomeType, otherThing: SomeType) {
 	// do something
 }
 
-func unwindSegue(segue : UIStoryboardSegue) {}
+func unwindSegue(segue: UIStoryboardSegue) {}
 ```
 
 ## Callbacks
@@ -245,10 +246,16 @@ When they are needed, comments should be used to explain **why** a particular pi
 
 ### Empty lines
 
-* Use single empty lines sparingly to separate code where it improves readability.
-* `// MARK: -` sections should have 2 empty lines above their declaration.
-* When declaring `classes`, `structs`, `enums`, `protocols` and `extensions` in global scope, separate them from other code by 2 empty lines.
+#### No:
 
+* Don't use empty lines as padding for bodies of methods and nested types.
+* There should be no empty lines before ending braces of types and functions.
+
+#### Yes:
+
+* Use single empty lines sparingly to separate code into logical chunks.
+* `// MARK: -` sections should have 2 empty lines above their declaration.
+* When declaring `classes`, `structs`, `enums`, `protocols` in global scope, separate them from other code by 2 empty lines.
 
 ### Extensions
 
