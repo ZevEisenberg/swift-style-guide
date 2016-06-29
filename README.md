@@ -22,7 +22,7 @@ This guide is designed to help maintain consistency in iOS projects. Some prefer
 	* [Extensions](#extensions)
 
 ### Indent using 4 spaces. Never indent with tabs. Lines should be no longer than 130 symbols.
-#### Be sure to set these preference in Xcode.
+#### Be sure to set these preferences in Xcode.
 
 ## self
 
